@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Repositories</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Github Repositories</span>
+    </nav>
+
+    <main class="container mt-4">
+        <div class="row">
+            
+            <div class="col-md-6 offset-md-3">
+                <label for="username">Enter Github username:</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="username" placeholder="Enter username">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" onclick="fetchRepositories()">Fetch Repositories</button>
+                    </div>
+                </div>
+
+                <div id="loader" class="loader" style="display: none;"></div>
+
+                <ul id="repositories" class="list-group"></ul>
+
+                <div id="pagination" class="text-center mt-4">
+                    <button class="btn btn-secondary" onclick="previousPage()">Previous</button>
+                    <span class="mx-3">Page <span id="currentPage">1</span></span>
+                    <button class="btn btn-secondary" onclick="nextPage()">Next</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-4 bg-dark text-white text-center py-2">
+        <p>&copy; 2024 Github Repositories</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
