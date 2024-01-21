@@ -15,9 +15,9 @@ function fetchRepositories() {
     loader.style.display = 'block';
 
     const repositoriesElement = document.getElementById('repositories');
-    repositoriesElement.innerHTML = ''; // Clear previous results
+    repositoriesElement.innerHTML = ''; 
 
-    // Use the Github API to fetch repositories
+  
     const apiUrl = `https://api.github.com/users/${username}/repos?per_page=${perPage}&page=${currentPage}`;
     fetch(apiUrl)
         .then(response => {
@@ -33,7 +33,7 @@ function fetchRepositories() {
             if (Array.isArray(data)) {
                 renderRepositories(data);
             } else if (data.message) {
-                // Check for a message property indicating an error from GitHub
+                
                 throw new Error(`GitHub API Error: ${data.message}`);
             } else {
                 throw new Error('Unexpected response format');
